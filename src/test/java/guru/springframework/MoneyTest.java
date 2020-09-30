@@ -22,6 +22,8 @@ public class MoneyTest {
     void testEqualityDollar(){
         assertEquals(Dinero.dollar(5), Dinero.dollar(5));
         assertNotEquals(Dinero.dollar(5), Dinero.dollar(8));
+        assertEquals(Dinero.franco(5), Dinero.franco(5));
+        assertNotEquals(Dinero.franco(3), Dinero.dollar(3));
     }
 
     @Test
@@ -29,12 +31,6 @@ public class MoneyTest {
         Dinero cinco = Dinero.franco(5);
         assertEquals(Dinero.franco(10), cinco.veces(2));
         assertEquals(Dinero.franco(15), cinco.veces(3));
-    }
-
-    @Test
-    void testEqualityFrancoSuizo(){
-        assertEquals(Dinero.franco(5), Dinero.franco(5));
-        assertNotEquals(Dinero.franco(5), Dinero.franco(8));
     }
 
     @Test

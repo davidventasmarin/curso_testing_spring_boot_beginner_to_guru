@@ -14,11 +14,11 @@ public class Dinero {
     }
 
     public static Dinero dollar(int cantidad){
-        return new Dollar(cantidad, "USD");
+        return new Dinero(cantidad, "USD");
     }
 
     public static Dinero franco(int cantidad){
-        return new Franco(cantidad, "CHF");
+        return new Dinero(cantidad, "CHF");
     }
 
     public boolean equals(Object object){
