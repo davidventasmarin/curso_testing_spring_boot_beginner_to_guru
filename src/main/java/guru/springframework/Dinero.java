@@ -1,6 +1,6 @@
 package guru.springframework;
 
-public abstract class Dinero {
+public class Dinero {
     protected int cantidad;
     protected String moneda;
 
@@ -13,8 +13,6 @@ public abstract class Dinero {
         return moneda;
     }
 
-    public abstract Dinero veces(int multiplicador);
-
     public static Dinero dollar(int cantidad){
         return new Dollar(cantidad, "USD");
     }
@@ -25,8 +23,17 @@ public abstract class Dinero {
 
     public boolean equals(Object object){
         Dinero dinero = (Dinero) object;
-
         return cantidad == dinero.cantidad
-                && this.getClass().equals(object.getClass());
+                && this.moneda == dinero.moneda;
+    }
+
+    @Override
+    public String toString() {
+        return "Dinero{"+"cantidad=" + cantidad + ", moneda='" + moneda
+                + '\'' + '}';
+    }
+
+    public Dinero veces(int multiplicador){
+        return new Dinero(cantidad * multiplicador, this.moneda);
     }
 }

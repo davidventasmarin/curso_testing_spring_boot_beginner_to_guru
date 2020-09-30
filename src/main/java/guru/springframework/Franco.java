@@ -6,7 +6,4 @@ public class Franco extends Dinero{
         super(cantidad, moneda);
     }
 
-    public Dinero veces(int multiplicador){
-        return Dinero.franco(cantidad * multiplicador);
-    }
 }
