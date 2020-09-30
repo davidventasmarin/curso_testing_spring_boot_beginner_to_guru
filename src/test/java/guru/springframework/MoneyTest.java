@@ -39,4 +39,14 @@ public class MoneyTest {
         assertEquals("CHF", Dinero.franco(1).moneda());
     }
 
+    @Test
+    void testSimpleSuma(){
+        Dinero cinco    = Dinero.dollar(5);
+        Expression suma = cinco.plus(cinco);
+        Banco banco     = new Banco();
+        Dinero reduce   = banco.reduce(suma, "USD");
+        assertEquals(Dinero.dollar(10), reduce);
+
+    }
+
 }
