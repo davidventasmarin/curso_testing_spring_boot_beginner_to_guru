@@ -49,4 +49,28 @@ public class MoneyTest {
 
     }
 
+    @Test
+    void testPlusReturnsSum(){
+        Dinero cinco         = Dinero.dollar(5);
+        Expression resultado = cinco.plus(cinco);
+        Suma sum             = (Suma) resultado;
+        assertEquals(cinco, sum.augmend);
+        assertEquals(cinco, sum.addmend);
+    }
+
+    @Test
+    void testReduceSum(){
+        Expression suma = new Suma(Dinero.dollar(3), Dinero.dollar(4));
+        Banco banco     = new Banco();
+        Dinero resultado= banco.reduce(suma, "USD");
+        assertEquals(Dinero.dollar(7), resultado);
+    }
+
+    @Test
+    void testReduceDinero(){
+        Banco banco      = new Banco();
+        Dinero resultado = banco.reduce(Dinero.dollar(1), "USD");
+        assertEquals(Dinero.dollar(1), resultado);
+    }
+
 }

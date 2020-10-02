@@ -28,6 +28,11 @@ public class Dinero implements Expression {
     }
 
     @Override
+    public Dinero reduce(String to){
+        return this;
+    }
+
+    @Override
     public String toString() {
         return "Dinero{"+"cantidad=" + cantidad + ", moneda='" + moneda
                 + '\'' + '}';
@@ -38,6 +43,6 @@ public class Dinero implements Expression {
     }
 
     public Expression plus(Dinero addend){
-        return new Dinero(cantidad + addend.cantidad, moneda);
+        return new Suma(this, addend);
     }
 }
