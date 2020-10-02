@@ -28,8 +28,8 @@ public class Dinero implements Expression {
     }
 
     @Override
-    public Dinero reduce(String to){
-        return this;
+    public Dinero reduce(Banco banco, String to){
+        return new Dinero(cantidad / banco.tasa(this.moneda, to), to);
     }
 
     @Override

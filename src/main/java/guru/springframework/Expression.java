@@ -1,5 +1,5 @@
 package guru.springframework;
 
 public interface Expression {
-    Dinero reduce(String to);
+    Dinero reduce(Banco banco, String to);
 }
